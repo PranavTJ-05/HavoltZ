@@ -48,7 +48,13 @@ export default function Navbar() {
             href="/"
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            <Zap className="h-6 w-6 text-primary" aria-hidden="true" />
+            <Image
+              src="/logo.svg" 
+              width={25}
+              height={25}
+              alt=" "
+              className="text-primary"
+            />
             <span className="font-semibold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
               Havoltz
             </span>

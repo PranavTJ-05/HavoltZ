@@ -11,7 +11,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <div className="flex justify-center mb-8">
-              <Zap className="h-16 w-16 text-primary animate-pulse" />
+              <Image src="/logo.svg" alt=" " width={250} height={250}  className="animate-pulse"/>
             </div>
             <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
               Welcome to Havoltz Club

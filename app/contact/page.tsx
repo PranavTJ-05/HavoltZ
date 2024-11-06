@@ -44,9 +44,9 @@ export default function ContactPage() {
                 <div>
                   <p className="font-medium">Address</p>
                   <p className="mt-2 text-muted-foreground">
-                    123 Innovation Street
+                    VIT Chennai
                     <br />
-                    Tech Valley, CA 94043
+                    Kelambakkam
                   </p>
                 </div>
               </div>
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 <Phone className="h-6 w-6 text-primary flex-shrink-0" />
                 <div>
                   <p className="font-medium">Phone</p>
-                  <p className="mt-2 text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="mt-2 text-muted-foreground">+91 1234567890</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -65,14 +65,14 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-            <div className="border rounded-lg p-6 bg-primary/5">
+            {/* <div className="border rounded-lg p-6 bg-primary/5">
               <h4 className="font-semibold mb-2">Office Hours</h4>
               <div className="space-y-2 text-muted-foreground">
                 <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                 <p>Saturday: 10:00 AM - 2:00 PM</p>
                 <p>Sunday: Closed</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
