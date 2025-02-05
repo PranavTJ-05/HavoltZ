@@ -1,7 +1,7 @@
 "use client";
 
 import { TeamMemberCard } from "@/components/team-member-card";
-import { teamMembers } from "@/lib/data/team";
+import teamMembers from "@/constants/team";
 import { ScrollAnimation } from "@/components/animations/scroll-animation";
 
 export default function TeamPage() {

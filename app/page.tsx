@@ -1,42 +1,37 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Users, Calendar, Trophy } from "lucide-react";
+import { ArrowRight, Users, Calendar, Trophy, Lightbulb, BookOpen, Network, Target } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { ScrollAnimation } from "@/components/animations/scroll-animation";
+import { Logo } from "@/components/logo";
+import { ProjectCarousel } from "@/components/ui/project-carousel";
+import slideData from "@/constants/slidedata";
 
 export default function Home() {
   return (
     <>
-      {/* Background GIF Container */}
-      <div className="fixed inset-0 -z-10">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover opacity-20"
-          poster="https://images.unsplash.com/photo-1581091226825-c6a89e7e4801?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80"
-        >
-          <source
-            src="https://cdn.pixabay.com/vimeo/328035647/Circuit%20-%2019528.mp4?width=1280&hash=f0c5f408d4c6d9bd4e59cd1af8e563f7f4f6d82c"
-            type="video/mp4"
-          />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/50 to-background/95" />
-      </div>
-
-      <section className="relative pt-32 pb-20">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Hero page*/}
           <ScrollAnimation>
-            <div className="mx-auto max-w-2xl text-center">
+            <div className="mx-auto max-w-3xl text-center">
               <div className="flex justify-center mb-8">
-                <Zap className="h-16 w-16 text-primary animate-pulse" />
+                <Logo className="h-24 w-24 text-primary animate-pulse" />
+                <Image
+                  src="@public/image_bank/logo.png"
+                  alt="Havoltz Club Logo"
+                  width={100}
+                  height={100}
+                  className="justify content-center h-24 w-24 text-primary animate-pulse" />
               </div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-                Welcome to Havoltz Club
+                Welcome to VIT Chennai&apos;s Havoltz Club
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
                 Where innovation meets excellence. Join our community of passionate individuals dedicated to pushing the boundaries of technology and creativity.
+                We aim to elevate practical skills in both software and hardware, aligning with the significant market demand for expertise in these areas.
+                Through encouraging teamwork, we strive to cultivate creativity andinnovation in projects within the field.
+                A primary focus is placed on actively sharing our wealth of knowledge in electrical and electronics engineering, embodying one of our core mottos.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6">
                 <Link href="/events" className="w-full sm:w-auto">
@@ -54,99 +49,86 @@ export default function Home() {
               </div>
             </div>
           </ScrollAnimation>
-        </div>
-      </section>
 
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {/* Motto Section */}
           <ScrollAnimation>
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Why Join Havoltz?</h2>
-              <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                Discover the opportunities that await you in our vibrant community.
-              </p>
-            </div>
-          </ScrollAnimation>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-              {[
-                {
-                  icon: <Users className="h-5 w-5 flex-none text-primary" />,
-                  title: "Community",
-                  description: "Connect with like-minded individuals and build lasting relationships."
-                },
-                {
-                  icon: <Calendar className="h-5 w-5 flex-none text-primary" />,
-                  title: "Events",
-                  description: "Participate in workshops, competitions, and networking events."
-                },
-                {
-                  icon: <Trophy className="h-5 w-5 flex-none text-primary" />,
-                  title: "Growth",
-                  description: "Develop your skills and advance your career through our programs."
-                }
-              ].map((item, index) => (
-                <ScrollAnimation key={item.title}>
-                  <div className="flex flex-col">
-                    <dt className="flex items-center gap-x-3 text-base font-semibold leading-7">
-                      {item.icon}
-                      {item.title}
-                    </dt>
-                    <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-muted-foreground">
-                      <p className="flex-auto">{item.description}</p>
-                    </dd>
-                  </div>
-                </ScrollAnimation>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative isolate overflow-hidden bg-primary/5 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <ScrollAnimation>
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Latest Events</h2>
-              <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                Check out our most recent and upcoming events. Join us to learn, grow, and connect.
-              </p>
-            </div>
-          </ScrollAnimation>
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:mt-10 lg:max-w-none lg:grid-cols-12">
-            <ScrollAnimation className="relative lg:order-last lg:col-span-5">
-              <Image
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                alt="Tech event"
-                width={2070}
-                height={1380}
-                className="aspect-[3/2] rounded-2xl object-cover"
-              />
-            </ScrollAnimation>
-            <ScrollAnimation className="max-w-xl text-base leading-7 lg:col-span-7">
-              <h3 className="text-2xl font-bold tracking-tight">Tech Innovation Summit 2024</h3>
-              <div className="mt-6 text-muted-foreground">
-                <p>Join us for our flagship event where industry leaders share insights on emerging technologies.</p>
-                <ul role="list" className="mt-8 space-y-4">
-                  <li className="flex gap-x-3">
-                    <span className="font-semibold">Keynote Speakers</span>
-                  </li>
-                  <li className="flex gap-x-3">
-                    <span className="font-semibold">Interactive Workshops</span>
-                  </li>
-                  <li className="flex gap-x-3">
-                    <span className="font-semibold">Networking Sessions</span>
-                  </li>
-                </ul>
-                <Link href="/events">
-                  <Button className="mt-8">
-                    View All Events
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
+            <div className="mt-28 mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-8">Our Motto</h2>
+              <div className="bg-primary/5 border rounded-2xl p-8">
+                <p className="text-lg leading-8 text-muted-foreground">
+                  Our club offers something for everyone. Our club hosts a variety of activities that cater to diverse interests. Our major focus is to bring like-minded people in the field of Electrical and Electronics to pool in their ideas and innovations together to achieve greater heights. One of our main motto is to predominantly share our knowledge in the field of electrical and electronics engineering.
+                </p>
               </div>
-            </ScrollAnimation>
-          </div>
+            </div>
+          </ScrollAnimation>
+
+          {/* Projects Section */}
+          <ScrollAnimation>
+            <div className="mt-28 w-full">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Featured Projects</h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Explore our innovative projects that showcase the technical expertise and creativity of our club members.
+                </p>
+              </div>
+              <div>
+                <ProjectCarousel slides={slideData} />
+              </div>
+            </div>
+          </ScrollAnimation>
+
+          {/* Why Join Section */}
+          <ScrollAnimation>
+            <div className="mt-28 mx-auto max-w-3xl">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-12 text-center">Why Join Havoltz?</h2>
+              <div className="bg-card border rounded-2xl p-8 shadow-lg mb-2">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Users className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Personal Growth</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Joining our club is not just about having fun; it&apos;s also an opportunity for personal growth and development. Through our workshops, guest speakers, and mentorship programs, you&apos;ll have the chance to learn new skills, gain valuable insights, and discover your full potential.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* || */}
+              <div className="bg-card border rounded-2xl p-8 shadow-lg mb-2">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Lightbulb className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Hands-on Experience</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Get practical experience with cutting-edge technologies through our hands-on projects and workshops. Work with microcontrollers, IoT devices, renewable energy systems, and more. Build a portfolio of real-world projects that will set you apart in your career.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-card border rounded-2xl p-8 shadow-lg mb-2">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Network className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2">Networking Opportunities</h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Connect with industry professionals, alumni, and like-minded peers. Our events and meetups provide excellent networking opportunities that can lead to internships, job opportunities, and lasting professional relationships in the field of electrical and electronics engineering.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
     </>

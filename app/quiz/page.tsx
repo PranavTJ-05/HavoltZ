@@ -12,37 +12,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Trophy, Timer, ArrowRight } from "lucide-react";
-
-const questions = [
-  {
-    id: 1,
-    question: "What is the primary purpose of a microcontroller?",
-    options: [
-      "To control microphones",
-      "To process data and control devices",
-      "To amplify sound",
-      "To display images",
-    ],
-    correct: 1,
-  },
-  {
-    id: 2,
-    question: "Which programming language is commonly used for Arduino?",
-    options: ["Python", "C++", "Java", "Ruby"],
-    correct: 1,
-  },
-  {
-    id: 3,
-    question: "What does LED stand for?",
-    options: [
-      "Light Emitting Device",
-      "Light Enabling Diode",
-      "Light Emitting Diode",
-      "Light Energy Display",
-    ],
-    correct: 2,
-  },
-];
+import questions from "@/constants/quiz";
 
 const leaderboard = [
   { name: "Alex Johnson", score: 95, time: "2:45" },

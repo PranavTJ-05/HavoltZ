@@ -5,16 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap } from "lucide-react";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Team", href: "/team" },
-  { name: "Events", href: "/events" },
-  { name: "Quiz", href: "/quiz" },
-  { name: "Contact", href: "/contact" },
-];
+import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/logo";
+import navigation from "@/constants/navbar_constants";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -58,7 +51,7 @@ export default function Navbar() {
             href="/"
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
           >
-            <Zap className="h-6 w-6 text-primary" aria-hidden="true" />
+            <Logo className="h-6 w-6 text-primary" ariana-hidden="true" />
             <span className="font-semibold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
               Havoltz
             </span>

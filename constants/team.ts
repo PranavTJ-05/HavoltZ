@@ -1,4 +1,4 @@
-export const teamMembers = [
+const teamMembers = [
     {
       name: "Sarah Johnson",
       role: "Club President",
@@ -9,7 +9,7 @@ export const teamMembers = [
         linkedin: "https://linkedin.com",
         github: "https://github.com",
       },
-    },
+    }, 
     {
       name: "Michael Chen",
       role: "Technical Lead",
@@ -33,3 +33,4 @@ export const teamMembers = [
       },
     },
   ];
+export default teamMembers;

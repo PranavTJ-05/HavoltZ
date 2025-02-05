@@ -1,14 +1,9 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Familjen_Grotesk } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 
-const fkGrotesk = Familjen_Grotesk({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-});
 
 export const metadata: Metadata = {
   title: 'Havoltz Club',
@@ -22,7 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={fkGrotesk.className}>
+      <body className='antialiased'
+        style={{ fontFamily: "'Space Grotesk'" }}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
