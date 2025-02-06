@@ -1,28 +1,125 @@
 "use client";
 
-import { TeamMemberCard } from "@/components/team-member-card";
-import teamMembers from "@/constants/team";
 import { ScrollAnimation } from "@/components/animations/scroll-animation";
+import teamMembers from "@/constants/team";
+import Image from "next/image";
+import { Facebook, Twitter, Linkedin } from "lucide-react";
 
 export default function TeamPage() {
   return (
-    <div className="min-h-screen pt-32 pb-20">
+    <div className="min-h-screen pt-40 pb-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollAnimation>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Meet Our Team</h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Get to know the passionate individuals who make Havoltz Club an amazing community.
+            <p className="mt-2 text-lg leading-8 text-muted-foreground">
+              Meet our creative team members behind our success!
             </p>
           </div>
         </ScrollAnimation>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {teamMembers.map((member) => (
+
+        {/* Team Grid */}
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 sm:grid-cols-2 lg:grid-cols-3 ">
+          {teamMembers.leads.map((member) => (
             <ScrollAnimation key={member.name}>
-              <TeamMemberCard member={member} />
+              <div className="group text-center border border-gray-300 p-4 rounded-2xl">
+                <div className="relative mx-auto w-48 h-48 mb-4">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={192}
+                    height={192}
+                    className="rounded-full object-cover shadow-lg"
+                  />
+                </div>
+                <div className="inline-flex px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-3">
+                  {member.role}
+                </div>
+                <h3 className="text-xl font-semibold mt-2">{member.name}</h3>
+                <div className="flex justify-center gap-4 mt-4">
+                  {/* <a
+                    href="#"
+                    className="text-muted-foreground hover:text-[#1877F2] transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Facebook className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-[#1DA1F2] transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Twitter className="h-5 w-5" />
+                  </a> */}
+                  <a
+                    href={member.linkedin}
+                    className="text-muted-foreground hover:text-[#0A66C2] transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </div>
+              </div>
             </ScrollAnimation>
           ))}
         </div>
+
+        {/* Faculty Section */}
+        <ScrollAnimation>
+          <div className="mt-24">
+            <h3 className="text-2xl font-semibold text-center mb-16">Faculty Coordinators</h3>
+            <div className="flex justify-center ">
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-x-8 gap-y-20 text-center border border-gray-300 p-4 rounded-2xl">
+                {teamMembers.facultyCoordinators.map((member) => (
+                  <div key={member.name} className="group">
+                    <div className="relative mx-auto w-48 h-48 mb-4">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={192}
+                        height={192}
+                        className="rounded-full object-cover shadow-lg"
+                      />
+                    </div>
+                    <div className="inline-flex px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-3">
+                      {member.role}
+                    </div>
+                    <h3 className="text-xl font-semibold mt-2">{member.name}</h3>
+                    <div className="flex justify-center gap-4 mt-4">
+                      {/* <a
+                        href="#"
+                        className="text-muted-foreground hover:text-[#1877F2] transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Facebook className="h-5 w-5" />
+                      </a>
+                      <a
+                        href="#"
+                        className="text-muted-foreground hover:text-[#1DA1F2] transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Twitter className="h-5 w-5" />
+                      </a> */}
+                      <a
+                        href={member.linkedin}
+                        className="text-muted-foreground hover:text-[#0A66C2] transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </ScrollAnimation>
       </div>
     </div>
   );

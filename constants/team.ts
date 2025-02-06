@@ -1,36 +1,43 @@
-const teamMembers = [
+const teamMembers = {
+  leads: [
     {
-      name: "Sarah Johnson",
-      role: "Club President",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      bio: "Leading innovation and fostering collaboration within our community.",
-      social: {
-        twitter: "https://twitter.com",
-        linkedin: "https://linkedin.com",
-        github: "https://github.com",
-      },
-    }, 
+      name: "Ganesh Ragava",
+      role: "Co- founder",
+      department: "Management",
+      image: "../image_bank/team/leads_ganesh.jpg",
+      linkedin: "https://www.linkedin.com/in/ganeshragavav/",
+    },
     {
-      name: "Michael Chen",
+      name: "Haris Raghav . G",
       role: "Technical Lead",
-      image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      bio: "Passionate about emerging technologies and mentoring future leaders.",
-      social: {
-        twitter: "https://twitter.com",
-        linkedin: "https://linkedin.com",
-        github: "https://github.com",
-      },
+      department: "Teachinal",
+      image: "../image_bank/team/leads_haris_raghav.jpg",
+      linkedin: "https://www.linkedin.com/in/haris-raghav-g/",
     },
     {
-      name: "Emily Rodriguez",
-      role: "Events Coordinator",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-      bio: "Creating memorable experiences and building strong community connections.",
-      social: {
-        twitter: "https://twitter.com",
-        linkedin: "https://linkedin.com",
-        github: "https://github.com",
-      },
+      name: "Pranav . B",
+      role: "Projects Lead",
+      department: "Projects Department",
+      image: "../image_bank/team/leads_pranav.jpg",
+      linkedin: "https://www.linkedin.com/in/pranav-b-hvz2005/",
     },
-  ];
+    {
+      name: "Saravanan",
+      role: "Treasuries and Accounts",
+      department: "Management",
+      image: "../image_bank/team/leads_saravanan.jpg",
+      linkedin: "https://www.linkedin.com/in/saravanan-sankar-8aa15834b/",
+    }
+  ],
+  facultyCoordinators: [
+    {
+      name: "Dr. R. JayaPrakash",
+      role: "Faculty Coordinator",
+      department: "Electrical Engineering HOD",
+      image: "../image_bank/team/faculty_hod_jayaprakash.jpg",
+      linkedin: "https://www.linkedin.com/in/jayapragash-r-b95a4727/",
+    }
+  ]
+};
+
 export default teamMembers;

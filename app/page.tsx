@@ -3,26 +3,24 @@ import { ArrowRight, Users, Calendar, Trophy, Lightbulb, BookOpen, Network, Targ
 import Link from "next/link";
 import Image from "next/image";
 import { ScrollAnimation } from "@/components/animations/scroll-animation";
-import { Logo } from "@/components/logo";
 import { ProjectCarousel } from "@/components/ui/project-carousel";
 import slideData from "@/constants/slidedata";
 
 export default function Home() {
   return (
     <>
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-24 pb-24 overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           {/* Hero page*/}
           <ScrollAnimation>
-            <div className="mx-auto max-w-3xl text-center">
-              <div className="flex justify-center mb-8">
-                <Logo className="h-24 w-24 text-primary animate-pulse" />
+            <div className="mx-auto max-w-3xl text-center justify-center">
+              <div className="flex justify-center -mb-5">
                 <Image
-                  src="@public/image_bank/logo.png"
+                  src="../image_bank/logo2.png"
                   alt="Havoltz Club Logo"
-                  width={100}
-                  height={100}
-                  className="justify content-center h-24 w-24 text-primary animate-pulse" />
+                  width={175}
+                  height={150}
+                  className="flex h-34 w-34 text-primary animate-bounce-pulse" />
               </div>
               <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
                 Welcome to VIT Chennai&apos;s Havoltz Club
@@ -30,8 +28,6 @@ export default function Home() {
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
                 Where innovation meets excellence. Join our community of passionate individuals dedicated to pushing the boundaries of technology and creativity.
                 We aim to elevate practical skills in both software and hardware, aligning with the significant market demand for expertise in these areas.
-                Through encouraging teamwork, we strive to cultivate creativity andinnovation in projects within the field.
-                A primary focus is placed on actively sharing our wealth of knowledge in electrical and electronics engineering, embodying one of our core mottos.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6">
                 <Link href="/events" className="w-full sm:w-auto">
@@ -81,7 +77,7 @@ export default function Home() {
           <ScrollAnimation>
             <div className="mt-28 mx-auto max-w-3xl">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-12 text-center">Why Join Havoltz?</h2>
-              <div className="bg-card border rounded-2xl p-8 shadow-lg mb-2">
+              <div className="bg-card border rounded-2xl p-8 shadow-lg mb-1">
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -97,7 +93,7 @@ export default function Home() {
                 </div>
               </div>
               {/* || */}
-              <div className="bg-card border rounded-2xl p-8 shadow-lg mb-2">
+              <div className="bg-card border rounded-2xl p-8 shadow-lg mb-1">
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -112,7 +108,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="bg-card border rounded-2xl p-8 shadow-lg mb-2">
+              <div className="bg-card border rounded-2xl p-8 shadow-lg mb-1">
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">

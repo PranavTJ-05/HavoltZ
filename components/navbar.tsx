@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
 import navigation from "@/constants/navbar_constants";
+import Image from "next/image";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -46,12 +47,19 @@ export default function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4"
         aria-label="Global"
       >
-        <div className="flex lg:flex-1">
+        <div className="flex items-center lg:flex-1">
           <Link
             href="/"
-            className="flex items-center gap-2 transition-opacity hover:opacity-80"
+            className="flex gap-2 transition-opacity hover:opacity-80"
           >
-            <Logo className="h-6 w-6 text-primary" ariana-hidden="true" />
+            <div className="flex justify-center mb-0">
+              <Image
+                src="../image_bank/logo2.png"
+                alt="Havoltz Club Logo"
+                width={30}
+                height={15}
+                className="flex h-34 w-34 text-primary" />
+            </div>
             <span className="font-semibold text-xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
               Havoltz
             </span>
