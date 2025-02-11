@@ -9,14 +9,14 @@ const teamMembers = {
     },
     {
       name: "Ganesh Ragava . V",
-      role: "Co- founder and Joint Secretary",
+      role: "Co - founder and Joint Secretary",
       department: "Management",
       image: "../image_bank/team/leads_ganesh.jpg",
       linkedin: "https://www.linkedin.com/in/ganeshragavav/",
     },
     {
       name: "Pranav . B",
-      role: "Technical Lead",
+      role: "Co - founder and Technical Lead",
       department: "Projects Department",
       image: "../image_bank/team/leads_pranav.jpg",
       linkedin: "https://www.linkedin.com/in/pranav-b-hvz2005/",

@@ -53,7 +53,7 @@ export default function Navbar() {
           >
             <div className="flex justify-center mb-0">
               <Image
-                src="../image_bank/logo2.png"
+                src="../image_bank/logo.png"
                 alt="Havoltz Club Logo"
                 width={30}
                 height={15}
