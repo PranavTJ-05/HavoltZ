@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className='antialiased'
-        style={{ fontFamily: "'Space Grotesk'" }}>
+        style={{ fontFamily: "'Nourd'" }}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

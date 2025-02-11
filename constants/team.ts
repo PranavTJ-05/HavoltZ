@@ -34,7 +34,14 @@ const teamMembers = {
       department: "Management",
       image: "../image_bank/team/leads_saravanan.jpg",
       linkedin: "https://www.linkedin.com/in/saravanan-sankar-8aa15834b/",
-    }
+    },
+    {
+      name: "Pranav . T J",
+      role: "Web Developement Lead",
+      department: "Teachinal and Management",
+      image: "../image_bank/team/leads_pranav_tj.jpg",
+      linkedin: "https://www.linkedin.com/in/pranav-t-j-b331b6268/",
+    },
   ],
   facultyCoordinators: [
     {

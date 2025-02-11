@@ -12,6 +12,13 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  safelist: [
+    'bg-purple-900', 'border-purple-500',
+    'bg-yellow-900', 'border-yellow-500',
+    'bg-gray-900', 'border-gray-500',
+    'bg-orange-950', 'border-orange-600',
+    'text-yellow-400', 'text-amber-400', 'text-orange-400',
+  ],
   theme: {
     extend: {
       fontSize: {
