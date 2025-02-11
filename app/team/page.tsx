@@ -68,58 +68,54 @@ export default function TeamPage() {
         </div>
 
         {/* Faculty Section */}
-        <ScrollAnimation>
-          <div className="mt-24">
-            <h3 className="text-2xl font-semibold text-center mb-16">Faculty Coordinators</h3>
-            <div className="flex justify-center ">
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-x-8 gap-y-20 text-center border border-gray-300 p-4 rounded-2xl">
-                {teamMembers.facultyCoordinators.map((member) => (
-                  <div key={member.name} className="group">
-                    <div className="relative mx-auto w-48 h-48 mb-4">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={192}
-                        height={192}
-                        className="rounded-full object-cover shadow-lg"
-                      />
-                    </div>
-                    <div className="inline-flex px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-3">
-                      {member.role}
-                    </div>
-                    <h3 className="text-xl font-semibold mt-2">{member.name}</h3>
-                    <div className="flex justify-center gap-4 mt-4">
-                      {/* <a
-                        href="#"
-                        className="text-muted-foreground hover:text-[#1877F2] transition-colors"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Facebook className="h-5 w-5" />
-                      </a>
-                      <a
-                        href="#"
-                        className="text-muted-foreground hover:text-[#1DA1F2] transition-colors"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Twitter className="h-5 w-5" />
-                      </a> */}
-                      <a
-                        href={member.linkedin}
-                        className="text-muted-foreground hover:text-[#0A66C2] transition-colors"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                    </div>
-                  </div>
-                ))}
+        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 sm:grid-cols- lg:grid-cols-1 justify-items-center">
+          {teamMembers.facultyCoordinators.map((member) => (
+            <ScrollAnimation key={member.name}>
+              <h3 className="text-2xl font-bold justify-center items-center text-center mb-4">Faculty Coordinators</h3>
+              <div className="group text-center mt-24 sm:w-80 lg:w-96 border border-gray-300 p-4 rounded-2xl lg:grid-cols-1">
+                <div className="relative mx-auto w-48 h-48 mb-4 justify-center items-center ">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={192}
+                    height={192}
+                    className="rounded-full object-cover shadow-transparent "
+                  />
+                </div>
+                <div className="inline-flex px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-3">
+                  {member.role}
+                </div>
+                <h3 className="text-xl font-semibold mt-2">{member.name}</h3>
+                <div className="flex justify-center gap-4 mt-4">
+                  {/* <a
+                    href="#"
+                    className="text-muted-foreground hover:text-[#1877F2] transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Facebook className="h-5 w-5" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-muted-foreground hover:text-[#1DA1F2] transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Twitter className="h-5 w-5" />
+                  </a> */}
+                  <a
+                    href={member.linkedin}
+                    className="text-muted-foreground hover:text-[#0A66C2] transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                </div>
               </div>
-            </div>
-          </div>
-        </ScrollAnimation>
+            </ScrollAnimation>
+          ))}
+        </div>
       </div>
     </div>
   );

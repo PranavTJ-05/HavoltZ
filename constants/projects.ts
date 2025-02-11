@@ -1,13 +1,8 @@
-const slideData = [
+const projects = [
   {
     title: "Meshmerize",
     button: "Explore the Project",
     src: "/image_bank/projects/meshmerize.jpg",
-  },
-  {
-    title: "Fall Detection System",
-    button: "Explore the Project",
-    src: "/image_bank/projects/fall_detection_system.jpg",
   },
   {
     title: "Robo Race",
@@ -25,4 +20,4 @@ const slideData = [
     src: "/image_bank/projects/thrust_control_system.jpg",
   },
 ];
-export default slideData;
+export default projects;

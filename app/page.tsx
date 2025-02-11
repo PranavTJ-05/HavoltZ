@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ScrollAnimation } from "@/components/animations/scroll-animation";
 import { ProjectCarousel } from "@/components/ui/project-carousel";
-import slideData from "@/constants/slidedata";
+import projects from "@/constants/projects";
 
 export default function Home() {
   return (
@@ -68,7 +68,7 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <ProjectCarousel slides={slideData} />
+                <ProjectCarousel slides={projects} />
               </div>
             </div>
           </ScrollAnimation>

@@ -4,7 +4,92 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Trophy, Timer, ArrowRight, RefreshCw } from "lucide-react";
-import allQuestions from "@/constants/quiz";
+
+const allQuestions = [
+  {
+    id: 1,
+    question: "What is the primary purpose of a microcontroller?",
+    options: [
+      "To control microphones",
+      "To process data and control devices",
+      "To amplify sound",
+      "To display images",
+    ],
+    correct: 1,
+  },
+  {
+    id: 2,
+    question: "Which programming language is commonly used for Arduino?",
+    options: ["Python", "C++", "Java", "Ruby"],
+    correct: 1,
+  },
+  {
+    id: 3,
+    question: "What does LED stand for?",
+    options: [
+      "Light Emitting Device",
+      "Light Enabling Diode",
+      "Light Emitting Diode",
+      "Light Energy Display",
+    ],
+    correct: 2,
+  },
+  {
+    id: 4,
+    question: "What is the function of a voltage regulator?",
+    options: [
+      "To increase voltage only",
+      "To maintain a constant voltage level",
+      "To convert AC to DC",
+      "To measure current flow",
+    ],
+    correct: 1,
+  },
+  {
+    id: 5,
+    question: "Which component is used to store electrical charge?",
+    options: [
+      "Resistor",
+      "Inductor",
+      "Capacitor",
+      "Transistor",
+    ],
+    correct: 2,
+  },
+  {
+    id: 6,
+    question: "What is the purpose of a transistor?",
+    options: [
+      "To store energy",
+      "To amplify or switch electronic signals",
+      "To resist current flow",
+      "To emit light",
+    ],
+    correct: 1,
+  },
+  {
+    id: 7,
+    question: "What does PWM stand for in electronics?",
+    options: [
+      "Power Width Management",
+      "Pulse Width Modulation",
+      "Power Wave Mechanism",
+      "Pulse Wave Management",
+    ],
+    correct: 1,
+  },
+  {
+    id: 8,
+    question: "Which protocol is commonly used for serial communication?",
+    options: [
+      "USB",
+      "UART",
+      "HTTP",
+      "FTP",
+    ],
+    correct: 1,
+  },
+];
 
 export default function QuizPage() {
   const [questions, setQuestions] = useState<typeof allQuestions>([]);
@@ -13,7 +98,6 @@ export default function QuizPage() {
   const [showScore, setShowScore] = useState(false);
   const [timer, setTimer] = useState(180); // 3 minutes in seconds
   const [quizStarted, setQuizStarted] = useState(false);
-  const [isActive, setIsActive] = useState(false);
 
   // Function to shuffle array using Fisher-Yates algorithm
   const shuffleArray = (array: typeof allQuestions) => {
@@ -25,39 +109,26 @@ export default function QuizPage() {
     return shuffled;
   };
 
-  useEffect(() => {
-    let intervalId: NodeJS.Timeout;
-
-    if (isActive && timer > 0) {
-      intervalId = setInterval(() => {
-        setTimer((prevTimer) => {
-          if (prevTimer <= 1) {
-            setIsActive(false);
-            setShowScore(true);
-            return 0;
-          }
-          return prevTimer - 1;
-        });
-      }, 1000);
-    }
-
-    return () => {
-      if (intervalId) {
-        clearInterval(intervalId);
-      }
-    };
-  }, [isActive, timer]);
-
   const startQuiz = () => {
-    // Select 10 random questions
-    const shuffledQuestions = shuffleArray(allQuestions).slice(0, 10);
+    // Select 5 random questions
+    const shuffledQuestions = shuffleArray(allQuestions).slice(0, 5);
     setQuestions(shuffledQuestions);
     setQuizStarted(true);
     setCurrentQuestion(0);
     setScore(0);
     setShowScore(false);
     setTimer(180);
-    setIsActive(true);
+
+    const interval = setInterval(() => {
+      setTimer((prev) => {
+        if (prev === 0) {
+          clearInterval(interval);
+          setShowScore(true);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
   };
 
   const handleAnswerClick = (selectedOption: number) => {
@@ -69,7 +140,6 @@ export default function QuizPage() {
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      setIsActive(false);
       setShowScore(true);
     }
   };
@@ -87,7 +157,7 @@ export default function QuizPage() {
           <Trophy className="h-16 w-16 mx-auto mb-8 text-primary" />
           <h1 className="text-4xl font-bold mb-6">Havoltz Technical Quiz</h1>
           <p className="text-lg text-muted-foreground mb-8">
-            Test your knowledge with 10 random technical questions. You have 3 minutes to complete the quiz.
+            Test your knowledge with 5 random technical questions. You have 3 minutes to complete the quiz.
           </p>
           <Button size="lg" onClick={startQuiz}>
             Start Quiz

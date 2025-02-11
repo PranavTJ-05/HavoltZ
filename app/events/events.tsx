@@ -13,30 +13,29 @@ export default function EventsPage() {
         <ScrollAnimation>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Events</h2>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              Join us at our upcoming events and explore our past achievements.
+            <p className="mt-4 text-lg leading-8 text-muted-foreground">
+              Come join our new event and explore our past achievements.
             </p>
           </div>
         </ScrollAnimation>
 
         {/* Upcoming Events Section */}
         <ScrollAnimation>
-          <div className="mt-16">
+          <div className="mt-12">
             <h3 className="text-2xl font-bold mb-8">Upcoming Events</h3>
-            {upcomingEvents.length > 0 ? (
             <div className="grid grid-cols-1 gap-8">
               {upcomingEvents.map((event) => (
                 <div
                   key={event.id}
-                  className="grid grid-cols-1 lg:grid-cols-12 overflow-hidden rounded-lg border bg-card hover:border-primary/50 transition-colors" 
+                  className="grid grid-cols-1 lg:grid-cols-12 overflow-hidden rounded-lg border bg-card hover:border-primary/50 transition-colors"
                 >
-                  <div className="relative lg:col-span-5 aspect-[9/16] lg:aspect-auto lg:h-[700px] overflow-hidden">
+                  <div className="relative lg:col-span-5 aspect-[9/16] lg:aspect-auto lg:h-[600px] overflow-hidden">
                     <Image
                       src={event.image}
                       alt={event.title}
                       width={event.imageWidth}
                       height={event.imageHeight}
-                      className="absolute inset-0 h-full w-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover"
                       priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent lg:hidden" />
@@ -83,15 +82,6 @@ export default function EventsPage() {
                 </div>
               ))}
             </div>
-            ):(
-              <div className="text-center py-16 bg-card border rounded-lg">
-                <Calendar className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-                <h4 className="text-xl font-semibold mb-2">No Upcoming Events</h4>
-                <p className="text-muted-foreground max-w-md mx-auto">
-                  Currently there are no upcoming events. Hold on tight! We&apos;re planning something exciting for you.
-                </p>
-              </div>
-            )}
           </div>
         </ScrollAnimation>
 
@@ -100,40 +90,38 @@ export default function EventsPage() {
           <div className="mt-24">
             <h3 className="text-2xl font-bold mb-8">Past Events</h3>
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-              {pastEvents.map((event) => (
+              {pastEvents.map((events) => (
                 <div
-                  key={event.id}
+                  key={events.id}
                   className="flex flex-col overflow-hidden rounded-lg border bg-card"
                 >
-                  <div className="relative aspect-[9/16] overflow-hidden">
+                  <div className="relative aspect-[9/16] lg:aspect-auto lg:h-[452px] lg:w-[640px] overflow-hidden">
                     <Image
-                      src={event.image}
-                      alt={event.title}
-                      width={event.imageWidth}
-                      height={event.imageHeight}
-                      className="absolute inset-0 h-full w-full object-cover"
+                      src={events.image}
+                      alt={events.title}
+                      width={events.imageWidth}
+                      height={events.imageHeight}
+                      className="absolute inset-0 w-full h-fullobject-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">
                       <div className="flex items-center gap-x-4 text-xs text-white/80">
-                        <time>{event.date}</time>
-                        <div>{event.time}</div>
+                        <time>{events.date}</time>
+                        <div>{events.time}</div>
                       </div>
                       <h3 className="mt-2 text-xl font-semibold text-white">
-                        {event.title}
+                        {events.title}
                       </h3>
                       <div className="mt-4 flex items-center gap-x-2 text-sm text-white/80">
                         <MapPin className="h-4 w-4" />
-                        {event.location}
+                        {events.location}
                       </div>
-                      <div className="mt-0 pl-6">
-                            <Users className="h-4 w-4" />
-                            {event.capacity.split("\n").map((line, index) => (
-                              <p key={index}>{line}</p>
-                            ))}
-                          </div>
+                      <div className="mt-2 flex items-center gap-x-2 text-sm text-white/80">
+                        <Users className="h-4 w-4" />
+                        {events.capacity}
+                      </div>
                       <p className="mt-4 text-sm leading-6 text-white/80 line-clamp-2">
-                        {event.description}
+                        {events.description}
                       </p>
                     </div>
                   </div>

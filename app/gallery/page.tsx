@@ -1,12 +1,25 @@
 "use client";
-
+//finalised right
 import Image from "next/image";
 import { ScrollAnimation } from "@/components/animations/scroll-animation";
-import gallery from "@/constants/gallery";
+import { AnimatedTestimonialsLeft } from "@/components/ui/animated-testimonials-left";
+import { AnimatedTestimonialsRight } from "@/components/ui/animated-testimonials-right";
+import testimonials from "@/constants/gallery";
 
 export default function GalleryPage() {
+  const gallery = [
+    {
+      title: "Havoltz Club Group Photo",
+      description: "Our stars and the members of the club",
+      image: "../image_bank/gallery/group.jpg",
+      imageWidth: 2070,
+      imageHeight: 1080,
+      featured: true
+    }
+  ];
   const featuredImage = gallery.find(item => item.featured);
   const regularImages = gallery.filter(item => !item.featured);
+  
 
   return (
     <div className="min-h-screen pt-32 pb-20">
@@ -24,7 +37,30 @@ export default function GalleryPage() {
         {featuredImage && (
           <ScrollAnimation>
             <div className="mt-16">
-              <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl">
+              {/* Mobile Layout */}
+              <div className="sm:hidden">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={featuredImage.image}
+                    alt={featuredImage.title}
+                    width={featuredImage.imageWidth}
+                    height={featuredImage.imageHeight}
+                    className="absolute inset-0 h-full w-full object-cover"
+                    priority
+                  />
+                </div>
+                <div className="mt-4 p-4 bg-background rounded-lg">
+                  <h3 className="text-xl font-semibold mb-2">
+                    {featuredImage.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {featuredImage.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Desktop/Tablet Layout */}
+              <div className="hidden sm:block relative aspect-[21/9] w-full overflow-hidden rounded-2xl">
                 <Image
                   src={featuredImage.image}
                   alt={featuredImage.title}
@@ -46,34 +82,9 @@ export default function GalleryPage() {
             </div>
           </ScrollAnimation>
         )}
-
-        {/* Regular Images Grid */}
-        <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {regularImages.map((item, index) => (
-            <ScrollAnimation key={item.title}>
-              <div className="group relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900">
-                <div className="relative aspect-[9/16]">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={item.imageWidth}
-                    height={item.imageHeight}
-                    className="absolute inset-0 h-full w-full object-cover transition duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/50 to-gray-900/20" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-xl font-semibold text-white mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm text-white/80">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </ScrollAnimation>
-          ))}
-        </div>
+        <div className="mt-14"></div>
+        <AnimatedTestimonialsRight testimonials={testimonials} selectedId={1} autoplay={true} />
+        <AnimatedTestimonialsLeft testimonials={testimonials} selectedId={2} autoplay={true} />
       </div>
     </div>
   );
