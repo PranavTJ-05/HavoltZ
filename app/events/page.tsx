@@ -6,6 +6,20 @@ import { ScrollAnimation } from "@/components/animations/scroll-animation";
 import Image from "next/image";
 import { pastEvents, upcomingEvents } from "@/constants/events";
 
+interface EventType {
+  id: number;
+  title: string;
+  date: string;
+  time: string;
+  location: string;
+  description: string;
+  link: string;
+  image: string;
+  imageWidth: number;
+  imageHeight: number;
+  capacity: string;
+}
+
 export default function EventsPage() {
   return (
     <div className="min-h-screen pt-32 pb-20">

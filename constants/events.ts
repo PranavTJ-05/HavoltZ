@@ -1,5 +1,6 @@
 const pastEvents = [
     {
+      id: 1,
       title: "Havoltz Club Inauguration ",
       date: "March 13th, 2024",
       time: "11.30 AM - 3:30 PM",
@@ -11,6 +12,7 @@ const pastEvents = [
       capacity: "250 attendees ( Free )",
     },
     {
+      id: 2,
       title: "PCB Designing Workshop",
       date: "October 3rd, 2024", 
       time: "9:00 AM - 4:30 PM",
@@ -25,6 +27,7 @@ const pastEvents = [
   
   const upcomingEvents = [
     {
+      id: 3,
       title: "Voltaics 25",
       date: "February 13-14, 2025", 
       time: "9:00 AM on 13th to 12:30 PM on 14th",
