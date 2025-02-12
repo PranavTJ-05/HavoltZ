@@ -8,6 +8,9 @@ import Footer from '@/components/footer';
 export const metadata: Metadata = {
   title: 'Havoltz Club',
   description: 'Where Innovation Meets Excellence',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -17,6 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+      </head>
       <body className='antialiased'
         style={{ fontFamily: "'Nourd'" }}>
         <ThemeProvider
